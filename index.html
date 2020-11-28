@@ -36,6 +36,52 @@
             vertical-align: middle;
         }
         </style>
+		
+		<script type="text/javascript">
+		<!--
+		var b_timer = null; // blink timer
+		var b_on = true; // blink state
+		var blnkrs = null; // array of spans
+
+		function blink() {
+		var tmp = document.getElementsByTagName("span");
+		if (tmp) {
+		blnkrs = new Array();
+		var b_count = 0;
+		for (var i = 0; i < tmp.length; ++i) {
+		if (tmp[i].className == "blink") {
+		blnkrs[b_count] = tmp[i];
+		++b_count;
+		}
+		}
+		// time in m.secs between blinks
+		// 500 = 1/2 second
+		blinkTimer(25);
+		}
+		}
+
+		function blinkTimer(ival) {
+		if (b_timer) {
+		window.clearTimeout(b_timer);
+		b_timer = null;
+		}
+		blinkIt();
+		b_timer = window.setTimeout('blinkTimer(' + ival + ')', ival);
+		}
+
+		function blinkIt() {
+		for (var i = 0; i < blnkrs.length; ++i) {
+		if (b_on == true) {
+		blnkrs[i].style.visibility = "hidden";
+		}
+		else {
+		blnkrs[i].style.visibility = "visible";
+		}
+		}
+		b_on =!b_on;
+		}
+		//-->
+		</script>
     
     <div class="my-block">
     <link href="/style.css" rel="stylesheet" type="text/css" media="all">
