@@ -8,26 +8,3 @@ body {
   color: white;
   font-family: Courier New;
 }
-a:link {
-  color: DeepSkyBlue;
-  background-color: transparent;
-  text-decoration: none;
-}
-
-a:visited {
-  color: aquamarine;
-  background-color: transparent;
-  text-decoration: none;
-}
-
-a:hover {
-  color: red;
-  background-color: transparent;
-  text-decoration: underline;
-}
-
-a:active {
-  color: yellow;
-  background-color: transparent;
-  text-decoration: underline;
-}
